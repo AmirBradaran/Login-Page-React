@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useState } from "react";
+import Navbar from "./Components/Navbar";
+import Home from "./Components/Home";
+import Login from "./Components/Login";
 
 export default function App() {
+  const [token, setToken] = useState();
+  const handleToken = (tk) => {
+    setToken(tk);
+  };
   return (
-    <div>
-      
-    </div>
-  )
+    <>
+      <AuthContext.Provider value={{ token, handleToken }}>
+        <Navbar />
+        {token ? <Home /> : <Login />}
+      </AuthContext.Provider>
+    </>
+  );
 }
