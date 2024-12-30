@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
 import Login from "./Components/Login";
+import AuthContext from "./Utils/AuthContext"
 
 export default function App() {
   const [token, setToken] = useState();

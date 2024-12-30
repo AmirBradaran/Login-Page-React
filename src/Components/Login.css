@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+:root {
+  --first-Color: #000f22;
+  --second-Color: #042558;
+  --third-Color: #547eb0;
+  --four-Color: #7191b8;
+  --five-Color: #c2e8ff;
+}
+.login-Form {
+  background: linear-gradient(to top, #000f22, #c2e8ff);
+  color: white;
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+}
+.login {
+  background: linear-gradient(to bottom, #000f22, #c2e8ff);
+  margin: 12% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  border: 1px solid var(--third-Color);
+  border-radius: 10px;
+  width: 15%;
+  height: 45%;
+  padding: 15px 20px;
+  box-shadow: 0 0 10px whitesmoke;
+}
+.login input {
+  border-radius: 5px;
+  height: 30px;
+  width: 80%;
+  padding-left: 5%;
+  transition: all 0.3s;
+}
+.login input:hover {
+  box-shadow: 0 0 10px whitesmoke;
+}
+.login button {
+  margin-top: 5%;
+  width: 80%;
+  height: 15%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.login button:hover {
+  box-shadow: 1px 1px 10px whitesmoke;
+  background-color: var(--first-Color);
+  color: white;
+}

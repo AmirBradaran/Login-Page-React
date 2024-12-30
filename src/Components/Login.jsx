@@ -1,8 +1,53 @@
-import React from "react";
-
+import React, { useContext, useState } from "react";
+import AuthContext from "../Utils/AuthContext";
+import "./Login.css";
 export default function Login() {
+  const [userName, setUserName] = useState();
+  const [password, setPassword] = useState();
+  const { handleToken } = useContext(AuthContext);
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch("https://fakestoreapi.com/auth/login", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          username: "mor_2314",
+          password: "83r5^_"
+      }),
+      });
+      const data = await res.json();
+      if (data?.token) {
+        handleToken(data.token);
+      }
+    } catch (error) {
+      alert(`Something Is Wrong Please Check`);
+    }
+  };
   return (
-    <div>
+    <div className="login-Form">
+      <form onSubmit={handleLogin} className="login">
+        <h1 className="login-Title">Login</h1>
+        <input
+          required
+          type="text"
+          name="userName"
+          id="userName"
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+        />
+        <input
+          required
+          type="password"
+          name="password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit">Login</button>
+      </form>
     </div>
   );
 }
