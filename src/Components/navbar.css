@@ -1,0 +1,30 @@
+.navBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1% 0 ;
+    position: relative;
+    background: linear-gradient(to bottom , #042658a5 , #c2e8ff);
+    color: white;
+    height: 5vh;
+}
+.navBar-Section{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    align-items: center;
+}
+.navBar-Li{
+    display: flex;
+    gap: 15px;
+}
+.navBar-Li li{
+    cursor: pointer;
+}
+.navBar-Li-Btn{
+    padding: 5px 10%;
+    background-color: #f0a500;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
