@@ -13,10 +13,7 @@ export default function Login() {
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify({
-          username: "mor_2314",
-          password: "83r5^_"
-      }),
+        body: JSON.stringify({userName , password}),
       });
       const data = await res.json();
       if (data?.token) {
