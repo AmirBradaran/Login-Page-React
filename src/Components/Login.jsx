@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import AuthContext from "../Utils/AuthContext";
 import "./Login.css";
 export default function Login() {
-  const [userName, setUserName] = useState();
+  const [username, setUserName] = useState();
   const [password, setPassword] = useState();
   const { handleToken } = useContext(AuthContext);
   const handleLogin = async (e) => {
@@ -13,7 +13,7 @@ export default function Login() {
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify({userName , password}),
+        body: JSON.stringify({username , password}),
       });
       const data = await res.json();
       if (data?.token) {
@@ -32,7 +32,7 @@ export default function Login() {
           type="text"
           name="userName"
           id="userName"
-          value={userName}
+          value={username}
           onChange={(e) => setUserName(e.target.value)}
         />
         <input
